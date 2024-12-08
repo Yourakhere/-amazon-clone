@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&family=Reem+Kufi+Fun&family=Roboto+Mono:ital,wght@1,700&display=swap" rel="stylesheet">     </head>
+    <body>
+        <div id="mid-div">
+            <div>
+                <img src="https://th.bing.com/th/id/OIP.ic6vXZ809mtBUKu_8dknPAHaC4?w=312&h=136&c=7&r=0&o=5&pid=1.7" alt="Logo">
+            </div>
+            <div id="m1">
+                <div id="m2">
+                    <div>
+                        <div>
+                            <h1 id="si">Create Your Amazon Account</h1>
+                        </div>
+                        <div class="edd">
+                            <div class="ema">
+                                <label for="email">Email or mobile phone number</label></br>
+                                <input type="text" placeholder="username" id="username" required></br>
+
+                                <input type="text" placeholder="Phone Number" id="phone" required></br>
+                            </div>
+                           
+                            <button type="but"  href="index.html" id="but">Continue</button>
+                            <p>By continuing, you agree to Amazon's Conditions of<br> Use and Privacy Notice.</p>
+                            <ul class="rem">
+                                <li><a href="#d">Need help?</a></li>
+                            </ul>
+                            <hr>
+                            <h3 id="bw">Buying for work?</h3>
+                            <a id="ba" href="">Shop on Amazon Business</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="help-section">
+                <div class="line"></div>
+                <div class="content">New to Amazon?</div>
+                <div class="line"></div>
+              </div>
+
+              <div class="but1"></div><button>Sign<a href="signin.html">.</a>  in</button>
+            </div>
+        </div>
+
+      
+        <div class="cont">
+          <hr>
+            <ul>
+                <li><a href="">Conditions of Use</a> </li>
+                <li><a href="">Privacy Notice</a> </li>
+                <li><a href="">Help</a> </li>
+            </ul>
+            <p style="text-align: center; margin: 10px; font-weight: 0; font-size: 12px; color: rgb(68, 68, 68);" >© 1996-2024, Amazon.com, Inc. or its affiliates</p>
+        </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+         import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+         const firebaseConfig = {
+             apiKey: "AIzaSyB5n9C2ZzAxTJLQmGEYBUpqaQkDSXo6ILo",
+             authDomain: "fir-3a58e.firebaseapp.com",
+             projectId: "fir-3a58e",
+             storageBucket: "fir-3a58e.firebasestorage.app",
+             messagingSenderId: "541227179762",
+             appId: "1:541227179762:web:390cf8956c0a2263b23a6b",
+             measurementId: "G-GTLMHR5BLK"
+         };
+
+         // Initialize Firebase
+         const app = initializeApp(firebaseConfig);
+
+         //get ref to database services
+          const db = getDatabase(app);
+
+          document.getElementById("but").addEventListener('click', function(e){
+           e.preventDefault();
+           set(ref(db, 'user/' + document.getElementById("username").value),
+           {
+
+             username: document.getElementById("username").value, 
+             PhoneNumber: document.getElementById("phone").value
+
+           });
+             alert("Login Sucessfull  !");
+             
+          })
+     </script>
+    </body>
+</html>
