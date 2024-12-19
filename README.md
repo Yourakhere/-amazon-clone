@@ -1,1 +1,1 @@
-﻿# -amazon-clone where login and signup in firebase and amazon project where product are access from api and and real time cart value updating and checkout page total with taxes with delete option and real time total amount update and after placeorder billing area with cool animation
+﻿# -Amazon clone in this main focus on api for fetching product and cart with fully working and testing with Jasmine to check all functionality of software
